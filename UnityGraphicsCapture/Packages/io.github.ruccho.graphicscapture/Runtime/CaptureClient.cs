@@ -33,6 +33,18 @@ namespace Ruccho.GraphicsCapture
             }
         }
 
+        public void ClearTarget()
+        {
+            if (IsDisposed) throw new ObjectDisposedException(nameof(CaptureClient));
+
+            if (CurrentCapture != null)
+            {
+                CurrentCapture.Dispose();
+                CurrentCapture = null;
+            }
+
+        }
+        
         public void Dispose()
         {
             if (IsDisposed) return;

@@ -25,6 +25,11 @@ namespace Ruccho.GraphicsCapture
             }
         }
 
+        public void ClearTarget()
+        {
+            client?.ClearTarget();
+        }
+
         private void Update()
         {
             if (!targetRenderer) targetRenderer = GetComponent<Renderer>();
